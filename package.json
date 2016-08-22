@@ -1,19 +1,23 @@
 {
   "name": "kmeter",
-  "private": true,
   "version": "1.0.0",
   "description": "",
   "author": "",
   "license": "",
   "scripts": {
-    "build:js": "concat-cli -f 'node_modules/raphael/node_modules/eve/eve.js' 'node_modules/raphael/raphael.js' 'node_modules/justgage/justgage.js' 'src/js/main.js' -o public/app.js",
+    "dev:js": "uglifyjs 'node_modules/raphael/node_modules/eve/eve.js' 'node_modules/raphael/raphael.js' 'node_modules/justgage/justgage.js' 'src/js/main.js' --output public/app.js --beautify --source-map public/app.js,map",
+    "build:js": "uglifyjs 'node_modules/raphael/node_modules/eve/eve.js' 'node_modules/raphael/raphael.js' 'node_modules/justgage/justgage.js' 'src/js/main.js' --output public/app.js",
     "watch:scss": "nodemon -e scss -x \"npm run build:css\"",
-    "build:css": "node-sass src/sass/main.scss public/app.css --source-map=true",
-    "postbuild:css": "postcss --use autoprefixer -r public/app.css",
+    "dev:css": "node-sass src/sass/main.scss public/app.css --source-map=true",
+    "build:css": "node-sass src/sass/main.scss public/app.css --output-style=compressed",
+    "postcss": "postcss --use autoprefixer -r public/app.css",
     "build:img": "imagemin src/img/* --out-dir=public/img",
-    "server": "live-server --host=localhost",
-    "prestart": "rm -rf public & mkdirp 'public'",
-    "start": "npm run build:img & npm run watch:scss & npm run build:js & npm run server"
+    "dev:html": "cpx \"src/index.html\" public -w -v",
+    "build:html": "cpx \"src/index.html\" public",
+    "server": "live-server --host=localhost --open=public",
+    "clean": "rm -rf public & mkdirp 'public'",
+    "dev": "npm run clean & npm run dev:html & npm run build:img & npm run dev:css & npm run postcss & npm run dev:js & npm run server",
+    "build": "npm run clean & npm run build:html & npm run build:img & npm run build:css & npm run postcss & npm run build:js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +25,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
-    "concat-cli": "^4.0.0",
     "eve": "^0.5.0",
     "imagemin-cli": "^3.0.0",
     "justgage": "^1.2.2",
@@ -29,6 +32,7 @@
     "node-sass": "^3.8.0",
     "nodemon": "^1.10.0",
     "postcss-cli": "^2.5.2",
-    "raphael": "^2.2.1"
+    "raphael": "^2.2.1",
+    "uglifyjs": "^2.4.10"
   }
 }

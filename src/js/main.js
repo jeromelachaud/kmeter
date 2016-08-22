@@ -135,11 +135,11 @@ function setFinalEmoji(volume) {
   if (volume === gaugeMin) {
     resultMessage = '';
   } else if (volume < gaugeMin + thirdPart ) {
-    resultMessage = getResultMessageHtml('Better luck next time', 'public/img/1.png');
+    resultMessage = getResultMessageHtml('Better luck next time', 'img/1.png');
   } else if (volume >= (gaugeMin + thirdPart) && volume < (gaugeMin + 2*thirdPart) ) {
-    resultMessage = getResultMessageHtml('Wow, super-kahoot!er', 'public/img/2.png');
+    resultMessage = getResultMessageHtml('Wow, super-kahoot!er', 'img/2.png');
   } else if (volume >= (gaugeMin + 2*thirdPart) ) {
-    resultMessage = getResultMessageHtml('Awesome unlocked!', 'public/img/3.png');
+    resultMessage = getResultMessageHtml('Awesome unlocked!', 'img/3.png');
   }
   document.getElementById('feedbackMsg').innerHTML = resultMessage;
 }
