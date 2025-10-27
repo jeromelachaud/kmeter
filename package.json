@@ -32,7 +32,7 @@
     "live-server": "^1.2.2",
     "node-sass": "^9.0.0",
     "nodemon": "^3.1.10",
-    "postcss-cli": "^2.5.2",
+    "postcss-cli": "^11.0.1",
     "raphael": "^2.2.1",
     "uglifyjs": "^2.4.10"
   }
