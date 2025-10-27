@@ -27,7 +27,7 @@
     "autoprefixer": "^6.4.0",
     "cpx2": "^2.0.0",
     "eve": "^0.5.0",
-    "imagemin-cli": "^7.0.0",
+    "imagemin-cli": "^8.0.0",
     "justgage": "^2.0.1",
     "live-server": "^1.2.2",
     "node-sass": "^7.0.0",
