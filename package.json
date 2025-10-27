@@ -30,7 +30,7 @@
     "imagemin-cli": "^7.0.0",
     "justgage": "^2.0.1",
     "live-server": "^1.2.2",
-    "node-sass": "^7.0.0",
+    "node-sass": "^9.0.0",
     "nodemon": "^3.1.10",
     "postcss-cli": "^2.5.2",
     "raphael": "^2.2.1",
