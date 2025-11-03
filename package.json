@@ -24,7 +24,7 @@
     "url": "git+https://jeromelachaud@github.com/mobitroll/kmeter.git"
   },
   "devDependencies": {
-    "autoprefixer": "^6.4.0",
+    "autoprefixer": "^10.4.21",
     "cpx2": "^2.0.0",
     "eve": "^0.5.0",
     "imagemin-cli": "^8.0.0",
